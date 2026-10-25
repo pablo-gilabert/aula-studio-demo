@@ -126,7 +126,7 @@ export function Enrollments() {
                     onChange={setGroupId}
                     options={data.groups.filter(g => data.courses.find(c => c.id === g.courseId)?.active).map(g => ({ value: g.id, label: `${courseName(g.courseId, data)} · ${g.name}` }))}
                 />
-                <div className="helpLine">{t(groupName(groupId, data))}{t(". Lugares ocupados: ")}{t(data.enrollments.filter(en => en.groupId === groupId && en.status === 'active').length)} {t(" / ")}{t(data.groups.find(g => g.id === groupId)?.capacity ?? 0)}{t(".")}</div>{error && <p className="helpLine" className="formError" role="alert">{t(error)}</p>}<div className="formActions">
+                <div className="helpLine">{t(groupName(groupId, data))}{t(". Lugares ocupados: ")}{t(data.enrollments.filter(en => en.groupId === groupId && en.status === 'active').length)} {t(" / ")}{t(data.groups.find(g => g.id === groupId)?.capacity ?? 0)}{t(".")}</div>{error && <p className="helpLine formError" role="alert">{t(error)}</p>}<div className="formActions">
                     <Button variant="secondary" onClick={() => setNewOpen(false)}>{t("Cancelar")}</Button>
                     <Button type="submit">{t("Inscribir alumno")}</Button>
                 </div>

@@ -184,7 +184,7 @@ export function Evaluations() {
                             </tr>;
                         })}</tbody>
                     </table>{!enrollees.length && <EmptyState title={t("No hay alumnos en esta comisión")} />}</div>
-                <div className="formActions" style={{ alignItems: 'center' }}>{saved && <span className="helpLine" className="formSuccess">{t("✓ Calificaciones guardadas")}</span>}<Button
+                <div className="formActions" style={{ alignItems: 'center' }}>{saved && <span className="helpLine formSuccess">{t("✓ Calificaciones guardadas")}</span>}<Button
                     onClick={saveGrades}
                     disabled={!enrollees.length || Object.values(scores).some(v => v !== '' && (!Number.isFinite(Number(v)) || Number(v) < 0 || Number(v) > selected.maxScore))}
                 >

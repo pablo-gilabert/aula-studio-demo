@@ -221,7 +221,7 @@ export function Courses() {
                     value={String(editCourse.active)}
                     onChange={v => setEditCourse({ ...editCourse, active: v === 'true' })}
                     options={[{ value: 'true', label: 'Disponible' }, { value: 'false', label: 'Inactivo' }]}
-                />{error && <p className="helpLine" className="formError">{t(error)}</p>}<div className="formActions">
+                />{error && <p className="helpLine formError">{t(error)}</p>}<div className="formActions">
                     <Button variant="secondary" onClick={() => setEditCourse(null)}>{t("Cancelar")}</Button>
                     <Button type="submit">{t("Guardar curso")}</Button>
                 </div>
@@ -272,7 +272,7 @@ export function Courses() {
                         value={editGroup.startDate}
                         onChange={v => setEditGroup({ ...editGroup, startDate: v })}
                     />
-                </div>{error && <p className="helpLine" className="formError">{t(error)}</p>}<div className="formActions">
+                </div>{error && <p className="helpLine formError">{t(error)}</p>}<div className="formActions">
                     <Button variant="secondary" onClick={() => setEditGroup(null)}>{t("Cancelar")}</Button>
                     <Button type="submit">{t("Guardar comisión")}</Button>
                 </div>
@@ -299,7 +299,7 @@ export function Courses() {
                     label={t("Carga horaria")}
                     value={editSubject.hours}
                     onChange={v => setEditSubject({ ...editSubject, hours: Number(v) })}
-                />{error && <p className="helpLine" className="formError">{t(error)}</p>}<div className="formActions">
+                />{error && <p className="helpLine formError">{t(error)}</p>}<div className="formActions">
                     <Button variant="secondary" onClick={() => setEditSubject(null)}>{t("Cancelar")}</Button>
                     <Button type="submit">{t("Guardar materia")}</Button>
                 </div>

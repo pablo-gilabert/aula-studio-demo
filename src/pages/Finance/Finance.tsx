@@ -166,7 +166,7 @@ export function Finance() {
                 <div className="formGrid">
                     <TextInput required type="number" min={1} label={t("Importe (ARS)")} value={amount} onChange={setAmount} />
                     <TextInput required type="date" label={t("Vencimiento")} value={dueDate} onChange={setDueDate} />
-                </div>{error && <p className="helpLine" className="formError">{t(error)}</p>}<div className="formActions">
+                </div>{error && <p className="helpLine formError">{t(error)}</p>}<div className="formActions">
                     <Button variant="secondary" onClick={() => setChargeOpen(false)}>{t("Cancelar")}</Button>
                     <Button type="submit" disabled={!effectiveEnrollment || !(Number(amount) > 0)}>
                         <Wallet size={15} /> {t(" Guardar cuota")}</Button>
@@ -196,7 +196,7 @@ export function Finance() {
                     value={method}
                     onChange={v => setMethod(v as Payment['method'])}
                     options={['Transferencia', 'Efectivo', 'Tarjeta'].map(v => ({ value: v, label: v }))}
-                />{error && <p className="helpLine" role="alert" className="formError">{t(error)}</p>}<div className="formActions">
+                />{error && <p className="helpLine formError" role="alert">{t(error)}</p>}<div className="formActions">
                     <Button variant="secondary" onClick={() => setPayCharge(null)}>{t("Cancelar")}</Button>
                     <Button type="submit">{t("Registrar pago ficticio")}</Button>
                 </div>

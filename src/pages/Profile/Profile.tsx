@@ -63,7 +63,7 @@ export function Profile() {
                             onChange={v => { setEmail(v); setSaved(false); }}
                         />
                         <TextInput label={t("Teléfono de contacto")} value={phone} onChange={v => { setPhone(v); setSaved(false); }} /></>}
-                    <div className="formActions">{saved && <span className="helpLine" className="formSuccess" style={{ alignSelf: 'center' }}>{t("✓ Cambios guardados")}</span>}<Button type="submit">
+                    <div className="formActions">{saved && <span className="helpLine formSuccess" style={{ alignSelf: 'center' }}>{t("✓ Cambios guardados")}</span>}<Button type="submit">
                         <Save size={15} /> {t(" Guardar cambios")}</Button>
                     </div>
                 </form>

@@ -149,7 +149,7 @@ export function Users() {
                     value={String(editing.active)}
                     onChange={v => setEditing({ ...editing, active: v === 'true' })}
                     options={[{ value: 'true', label: 'Habilitado' }, { value: 'false', label: 'Deshabilitado' }]}
-                />{error && <p role="alert" className="helpLine" className="formError">{t(error)}</p>}<div className="formActions">
+                />{error && <p role="alert" className="helpLine formError">{t(error)}</p>}<div className="formActions">
                     <Button variant="secondary" onClick={() => setEditing(null)}>{t("Cancelar")}</Button>
                     <Button type="submit">
                         <KeyRound size={15} /> {t(" Guardar usuario")}</Button>
