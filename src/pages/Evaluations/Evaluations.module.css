@@ -1,0 +1,16 @@
+/* Visual styles exclusive to the Evaluations page. */
+
+.gradesInput {
+    max-width: 80px;
+    border-radius: 9px;
+    border: 1px solid var(--line);
+    padding: 8px;
+    background: var(--card);
+    outline: none;
+    font-size: 12px;
+    width: 100%;
+}
+
+.gradesInput:focus {
+    border-color: #b58d67;
+}

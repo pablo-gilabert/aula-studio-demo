@@ -1,0 +1,141 @@
+/* Compact display preferences shared across the public and authenticated views. */
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.languageMenu {
+    position: relative;
+    z-index: 80;
+}
+
+.languageButton, .themeToggle {
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    color: var(--ink);
+    background: var(--card);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    box-shadow: 0 3px 12px #15241a09;
+}
+
+.languageButton {
+    gap: 8px;
+    padding: 0 11px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .4px;
+}
+
+.flag {
+    display: block;
+    width: 24px;
+    height: 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.options {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    box-shadow: 0 14px 36px #17232224;
+    min-width: 168px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    overflow: hidden;
+    padding: 5px;
+}
+
+.options button {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+    background: transparent;
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--ink);
+    text-align: left;
+}
+
+.options button:hover {
+    background: var(--bg);
+}
+
+.optionText {
+    flex: 1;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.optionText small {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.themeToggle {
+    padding: 0 10px;
+    gap: 7px;
+    color: var(--muted);
+}
+
+.activeIcon {
+    color: var(--bronze-dark);
+}
+
+.track {
+    display: flex;
+    width: 27px;
+    height: 16px;
+    border-radius: 99px;
+    padding: 2px;
+    background: var(--line);
+    align-items: center;
+    transition: background .2s;
+}
+
+.knob {
+    background: var(--ink);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    transition: transform .2s;
+}
+
+:global([data-theme="dark"]) .knob {
+    transform: translateX(11px);
+    background: var(--sand);
+}
+
+:global([data-theme="dark"]) .track {
+    background: #4b5957;
+}
+
+@media (max-width: 550px) {
+    .controls {
+        gap: 6px;
+    }
+
+    .themeToggle {
+        gap: 5px;
+        padding: 0 7px;
+    }
+
+    .languageButton {
+        padding: 0 8px;
+        gap: 6px;
+    }
+}

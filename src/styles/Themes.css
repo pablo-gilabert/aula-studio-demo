@@ -1,0 +1,43 @@
+/* Dark mode is implemented with semantic design tokens, not class-name overrides. */
+:root[data-theme='dark'] {
+    color-scheme: dark;
+
+    --bg: #101a1c;
+    --card: #1b2b2d;
+    --surface-soft: #243739;
+    --surface-hover: #304647;
+    --field-bg: #1e3032;
+    --ink: #ecf4f0;
+    --text-mid: #cfddd6;
+    --muted: #b0c0b8;
+    --line: #435956;
+    --bronze: #e3bd8c;
+    --bronze-dark: #f0ca99;
+    --sand: #eac99e;
+    --on-dark: #ffffff;
+    --focus-ring: #f0be81;
+    --shadow: #00000066;
+    --action-bg: #a4cfbc;
+    --action-fg: #12221b;
+    --action-hover: #b7dfcb;
+    --success-text: #a5e8c1;
+    --error-text: #ffb3a9;
+}
+
+/* Native controls and placeholders retain readable contrast in both themes. */
+:root[data-theme='dark'] input,
+:root[data-theme='dark'] select,
+:root[data-theme='dark'] textarea {
+    color-scheme: dark;
+    color: var(--ink);
+}
+
+:root[data-theme='dark'] input::placeholder,
+:root[data-theme='dark'] textarea::placeholder {
+    color: var(--muted);
+    opacity: 1;
+}
+
+:root[data-theme='dark'] .dataTable tbody tr:hover {
+    background: var(--surface-hover);
+}

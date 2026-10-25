@@ -1,0 +1,549 @@
+/* Public account selection, login, and responsive introduction layout. */
+
+.page {
+    display: grid;
+    grid-template-columns: 49% 51%;
+    min-height: 100vh;
+    background: var(--card);
+}
+
+.story {
+    position: relative;
+    overflow: hidden;
+    background: #303c3c;
+    color: var(--on-dark);
+    min-height: 760px;
+}
+
+.storyContent {
+    position: relative;
+    z-index: 2;
+    min-height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 44px clamp(32px, 5vw, 88px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+
+.logoIcon {
+    background: var(--sand);
+    color: #263a34;
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+}
+
+.logoAccent {
+    color: #d7b28c;
+}
+
+.storyMain {
+    margin: auto 0;
+    padding: 80px 0 90px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d9be9f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.1px;
+    margin-bottom: 29px;
+}
+
+.story h1 {
+    font-size: clamp(43px, 4.15vw, 70px);
+    line-height: 1.13;
+    letter-spacing: -2.8px;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+.story h1 em {
+    font-weight: 450;
+    color: #e1bd96;
+    font-style: normal;
+}
+
+.storyMain>p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #c6d0ca;
+    margin-top: 24px;
+    max-width: 415px;
+}
+
+.storyTiles {
+    display: flex;
+    gap: 27px;
+    margin-top: 70px;
+    flex-wrap: wrap;
+}
+
+.storyTiles>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.storyTiles>div span {
+    width: 41px;
+    height: 41px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #536362;
+    color: #d9be9e;
+    margin-bottom: 8px;
+}
+
+.storyTiles strong {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.storyTiles small {
+    font-size: 11px;
+    color: #aabbb4;
+}
+
+.storyFooter {
+    font-size: 9px;
+    color: #a6b6b0;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.storyDash {
+    width: 24px;
+    height: 1px;
+    background: #cfb490;
+    display: inline-block;
+}
+
+.decorOne, .decorTwo, .decorThree {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .085);
+    width: 670px;
+    height: 670px;
+    right: -410px;
+    top: 100px;
+}
+
+.decorTwo {
+    width: 470px;
+    height: 470px;
+    right: -300px;
+    top: 195px;
+}
+
+.decorThree {
+    width: 260px;
+    height: 260px;
+    right: -196px;
+    top: 288px;
+    background: rgba(221, 172, 123, .07);
+}
+
+.loginArea {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.loginTop {
+    padding: 46px 60px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.tag {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    font-weight: 850;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    background: #82b996;
+    border-radius: 50%;
+}
+
+.formWrap {
+    width: 100%;
+    max-width: 515px;
+    padding: 48px 38px 30px;
+    margin: auto;
+}
+
+.welcomeIcon {
+    width: 45px;
+    height: 45px;
+    border-radius: 13px;
+    background: var(--surface-soft);
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    margin-bottom: 19px;
+}
+
+.formWrap h2 {
+    font-size: 35px;
+    letter-spacing: -1.5px;
+    line-height: 1.19;
+    color: var(--ink);
+    font-weight: 770;
+}
+
+.intro {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.75;
+    margin: 14px 0 28px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.form input {
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    padding: 13px 14px;
+    width: 100%;
+    outline: none;
+    font-family: inherit;
+    color: var(--ink);
+    background: var(--card);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form input:focus {
+    border-color: #b99474;
+    box-shadow: 0 0 0 3px #d8bfa233;
+}
+
+.passwordWrap {
+    position: relative;
+}
+
+.passwordWrap input {
+    padding-right: 50px;
+}
+
+.passwordWrap button {
+    border: 0;
+    background: transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    color: var(--muted);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.error {
+    background: #fff0ee;
+    color: #a74f47;
+    border-radius: 9px;
+    padding: 10px 12px;
+    font-size: 12px;
+}
+
+.loginButton {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    border: 0;
+    border-radius: 11px;
+    background: #303e3c;
+    color: var(--on-dark);
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.loginButton:hover {
+    background: #48605a;
+}
+
+.divider {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.15px;
+    font-weight: 850;
+    margin: 27px 0 17px;
+    white-space: nowrap;
+}
+
+.divider span {
+    height: 1px;
+    background: var(--line);
+    flex: 1;
+}
+
+.demoRoles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.demoRole {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 13px;
+    padding: 12px 13px;
+    cursor: pointer;
+    transition: all .15s;
+}
+
+.demoRole:hover {
+    border-color: #b9a38b;
+    background: var(--surface-soft);
+    transform: translateX(2px);
+}
+
+.roleIcon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    color: #7a7460;
+    background: #f4f0e8;
+    flex: none;
+}
+
+.demoRoleText {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+    min-width: 0;
+}
+
+.demoRoleText strong {
+    color: var(--ink);
+    font-size: 12px;
+}
+
+.demoRoleText small {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.roleArrow {
+    color: var(--muted);
+}
+
+.note {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.note strong {
+    color: var(--ink);
+}
+
+.note span {
+    display: none;
+}
+
+.loginFooter {
+    font-size: 10px;
+    text-align: center;
+    padding: 18px 35px 27px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+@media (max-width:1100px) {
+    .storyContent {
+        padding: 35px 32px;
+    }
+
+    .story h1 {
+        white-space: normal;
+        font-size: 50px;
+    }
+
+    .storyTiles {
+        gap: 16px;
+    }
+
+    .formWrap {
+        padding: 30px;
+    }
+
+    .loginTop {
+        padding: 35px 35px 0;
+    }
+}
+
+@media (max-width:820px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .story {
+        min-height: 0;
+    }
+
+    .storyContent {
+        padding: 18px 23px;
+    }
+
+    .storyMain, .storyFooter {
+        display: none;
+    }
+
+    .brandArea {
+        padding: 20px;
+    }
+
+    .loginArea {
+        min-height: calc(100vh - 79px);
+    }
+
+    .loginTop {
+        padding: 18px 25px 0;
+    }
+
+    .formWrap {
+        max-width: 535px;
+        padding: 30px 23px 20px;
+    }
+
+    .formWrap h2 {
+        font-size: 31px;
+    }
+
+    .loginFooter {
+        padding: 8px 24px 28px;
+    }
+}
+
+/* Account previews prioritize email visibility over decorative descriptions. */
+
+.credentialsNote {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    margin: -4px 0 12px;
+}
+
+.credentialsNote strong {
+    color: var(--ink);
+}
+
+.roleDescription {
+    margin-top: 2px;
+}
+
+.demoRoleText small:first-of-type {
+    color: var(--bronze-dark);
+    font-weight: 750;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.demoRole {
+    min-height: 62px;
+}
+
+.loginTop {
+    gap: 12px;
+    align-items: center;
+}
+
+@media (max-width:500px) {
+    .loginTop .tag {
+        display: none;
+    }
+}
+
+/* The account list stays concise on typical laptop screens. */
+
+.formWrap {
+    padding-top: 26px;
+    padding-bottom: 20px;
+}
+
+.welcomeIcon {
+    margin-bottom: 12px;
+}
+
+.intro {
+    margin: 11px 0 19px;
+}
+
+.form {
+    gap: 12px;
+}
+
+.divider {
+    margin: 19px 0 13px;
+}
+
+.demoRoles {
+    gap: 7px;
+}
+
+@media (max-width:820px) {
+    .formWrap {
+        padding-top: 24px;
+    }
+}

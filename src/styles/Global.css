@@ -1,0 +1,367 @@
+/* Font families and semantic color tokens shared by every view. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: light;
+
+    --bg: #f7f8f5;
+    --card: #ffffff;
+    --surface-soft: #f1f4ef;
+    --surface-hover: #e9efea;
+    --field-bg: #ffffff;
+    --ink: #263a34;
+    --text-mid: #50665c;
+    --muted: #65786e;
+    --line: #dbe3dc;
+    --bronze: #ad8051;
+    --bronze-dark: #8b6038;
+    --sand: #e8c79f;
+    --on-dark: #ffffff;
+    --focus-ring: #bd8950;
+    --shadow: #17232220;
+    --action-bg: #263a34;
+    --action-fg: #ffffff;
+    --action-hover: #3e5950;
+    --success-text: #237247;
+    --error-text: #a33736;
+}
+
+/* Base reset and keyboard accessibility. */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+#root {
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Manrope', 'DM Sans', sans-serif;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+input, select, textarea {
+    color: var(--ink);
+    background: var(--field-bg);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: var(--sand);
+    color: #263a34;
+}
+
+/* Shared responsive layout primitives for forms, tables, and card grids. */
+.sectionGrid {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 18px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.formStack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 20px;
+}
+
+.tableWrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.dataTable th {
+    padding: 13px 12px 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.15px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.dataTable td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--text-mid);
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.dataTable tr:last-child td {
+    border-bottom: 0;
+}
+
+.dataTable tbody tr:hover {
+    background: var(--surface-hover);
+}
+
+.dataTable strong {
+    color: var(--ink);
+    font-weight: 750;
+}
+
+.tablePerson {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 170px;
+}
+
+.tablePerson span {
+    display: block;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 17px;
+}
+
+.searchWrap {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 9px;
+    min-width: 220px;
+    max-width: 380px;
+    min-height: 40px;
+    padding: 0 11px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--field-bg);
+}
+
+.searchWrap svg {
+    flex: none;
+    color: var(--muted);
+}
+
+.searchWrap input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--ink);
+    font-size: 12px;
+}
+
+.filterSelect {
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--field-bg);
+    color: var(--text-mid);
+    font-size: 12px;
+}
+
+.subText {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.infoRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.infoRow:last-child {
+    border-bottom: 0;
+}
+
+.infoRow strong {
+    font-size: 12px;
+}
+
+.infoRow span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.miniButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 30px;
+    min-width: 30px;
+    padding: 5px 9px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text-mid);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.miniButton:hover {
+    border-color: var(--bronze);
+    color: var(--bronze-dark);
+}
+
+.sectionSpacer {
+    height: 20px;
+}
+
+.helpLine {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.progress {
+    height: 6px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--surface-soft);
+}
+
+.progress > span {
+    display: block;
+    height: 100%;
+    border-radius: 20px;
+    background: #89ab98;
+}
+
+.listStack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (max-width: 1240px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cardGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .sectionGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .statsGrid, .cardGrid, .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        align-items: stretch;
+    }
+
+    .searchWrap {
+        min-width: 100%;
+        max-width: none;
+    }
+
+    .filterSelect {
+        flex: 1;
+    }
+
+    .dataTable th, .dataTable td {
+        padding: 11px 9px;
+    }
+
+    .formActions {
+        flex-wrap: wrap;
+    }
+
+    .formActions button {
+        flex: 1;
+    }
+}
+
+/* Validation and confirmation feedback is readable across both color schemes. */
+.formError {
+    color: var(--error-text);
+}
+
+.formSuccess {
+    color: var(--success-text);
+}
